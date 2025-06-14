@@ -1,4 +1,0 @@
-Name,Address,Contact,Category
-"Central Park","Central Park, New York, NY","(212) 310-6600","Park"
-"Statue of Liberty","Liberty Island, New York, NY 10004","(212) 363-3200","Landmark"
-"Empire State Building","20 W 34th St, New York, NY 10001","(212) 736-3100","Attraction"
