@@ -1,65 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced CSV to Google Maps</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE&libraries=places,visualization"></script>
-    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-	<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE&libraries=visualization,geometry"></script>
-    <link rel="stylesheet" href="styles.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE"></script>
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>Advanced CSV Map Visualizer</h1>
-            <div class="controls">
-                <div class="file-upload">
-                    <input type="file" id="csvFile" accept=".csv,.tsv,.txt,.xlsx">
-                    <button id="processBtn">Process File</button>
-                </div>
-                <div class="search-filter">
-                    <input type="text" id="searchInput" placeholder="Search locations...">
-                    <select id="categoryFilter">
-                        <option value="">All Categories</option>
-                    </select>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <div class="map-container">
-                <div id="map"></div>
-                <div class="map-actions">
-                    <button id="exportImage">Export as Image</button>
-                    <button id="exportPDF">Export as PDF</button>
-                    <button id="clearMap">Clear Map</button>
-                </div>
-            </div>
-            
-            <div class="data-panel">
-                <div class="stats">
-                    <h3>Processing Stats</h3>
-                    <div id="status">Ready to upload file</div>
-                    <div class="progress-container">
-                        <progress id="progressBar" value="0" max="100"></progress>
-                        <span id="progressText">0%</span>
-                    </div>
-                    <div id="results"></div>
-                </div>
-                <div class="data-table">
-                    <h3>Processed Data</h3>
-                    <div id="tableContainer"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+  <div id="map" style="height:500px"></div>
+  <script>
+    new google.maps.Map(document.getElementById("map"), {
+      center: {lat: 0, lng: 0},
+      zoom: 2
+    });
+  </script>
 </body>
 </html>
-
