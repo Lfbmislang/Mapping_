@@ -3,6 +3,11 @@ console.log("Script loaded!");
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM fully loaded");
 });
+if (typeof google === 'undefined') {
+  console.error("Google Maps API failed to load");
+} else {
+  console.log("Google Maps API loaded successfully");
+}
 class CSVMapVisualizer {
     // ... existing code ...
 
