@@ -1,3 +1,8 @@
+// Add this at the start of app.js
+console.log("Script loaded!");
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM fully loaded");
+});
 class CSVMapVisualizer {
     // ... existing code ...
 
