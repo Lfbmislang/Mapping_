@@ -1,65 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title>CSV to Google Maps</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced CSV to Google Maps</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE&libraries=places,visualization"></script>
+    <!-- SINGLE API LOAD -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE&libraries=places,visualization,geometry&callback=initMap" async defer></script>
+    <!-- OTHER LIBRARIES -->
     <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-	<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-uqz5uVGCQgLz_0r5CD-VLIVmpfnnjkE&libraries=visualization,geometry"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>Advanced CSV Map Visualizer</h1>
-            <div class="controls">
-                <div class="file-upload">
-                    <input type="file" id="csvFile" accept=".csv,.tsv,.txt,.xlsx">
-                    <button id="processBtn">Process File</button>
-                </div>
-                <div class="search-filter">
-                    <input type="text" id="searchInput" placeholder="Search locations...">
-                    <select id="categoryFilter">
-                        <option value="">All Categories</option>
-                    </select>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-content">
-            <div class="map-container">
-                <div id="map"></div>
-                <div class="map-actions">
-                    <button id="exportImage">Export as Image</button>
-                    <button id="exportPDF">Export as PDF</button>
-                    <button id="clearMap">Clear Map</button>
-                </div>
-            </div>
-            
-            <div class="data-panel">
-                <div class="stats">
-                    <h3>Processing Stats</h3>
-                    <div id="status">Ready to upload file</div>
-                    <div class="progress-container">
-                        <progress id="progressBar" value="0" max="100"></progress>
-                        <span id="progressText">0%</span>
-                    </div>
-                    <div id="results"></div>
-                </div>
-                <div class="data-table">
-                    <h3>Processed Data</h3>
-                    <div id="tableContainer"></div>
-                </div>
-            </div>
+    <div class="container">
+        <h1>CSV to Google Map</h1>
+        <div class="upload-area">
+            <input type="file" id="csvFile" accept=".csv">
+            <button id="processBtn">Map Locations</button>
+            <div id="status">Ready</div>
         </div>
+        <div id="map"></div>
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
-
